@@ -1,6 +1,16 @@
 const API_BASE = '/api';
 
+
+let USE_MOCK = true;
+let MOCK_TASKS = [];
+
 async function registerUser(username, password) {
+    if (USE_MOCK) {
+        alert('MOCK: Registration successful');
+        localStorage.setItem('authToken', 'mock-token');
+        return {};
+    }
+    
     const response = await fetch(`${API_BASE}/register`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
@@ -11,6 +21,12 @@ async function registerUser(username, password) {
 }
 
 async function loginUser(username, password) {
+    if (USE_MOCK) {
+        alert('MOCK: Login successful');
+        localStorage.setItem('authToken', 'mock-token');
+        return {access_token: 'mock-token'};
+    }
+    
     const response = await fetch(`${API_BASE}/login`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},

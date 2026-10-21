@@ -121,17 +121,7 @@ object-fit: contain;
 padding-left: 10px;
 }
 
-.task1 {
-height: 80px;
-width: 410px;
-font-family: Arial, sans-serif;
-font-size: 25px;
-padding-left: 10px;
-border-radius: 10px;
-border: none;
-margin-left: 10px;
-border-right: 5px solid rgb(88, 215, 226);
-}
+
 
 .tasks {
 display: flex;
@@ -140,46 +130,21 @@ width: 425px;
 
 }
 
-.task2 {
-margin-top: 7px;
-height: 80px;
-width: 410px;
-font-family: Arial, sans-serif;
-font-size: 25px;
-border-radius: 10px;
-padding-left: 10px;
-border: none;
-margin-left: 10px;
-border-right: 5px solid orange;
+.task-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-top: 5px;
+    background-color: white;
+    border-radius: 5px;
 }
 
-.task3 {
-margin-top: 49px;
-height: 80px;
-width: 410px;
-font-family: Arial, sans-serif;
-font-size: 25px;
-border-radius: 10px;
-padding-left: 1px;
-border: none;
-margin-left: 10px;
-text-decoration: line-through;
-box-sizing: border-box; 
 
-}
+.task-item:nth-child(1) { border-right: 5px solid rgb(88, 215, 226); }
+.task-item:nth-child(2) { border-right: 5px solid orange; }
+.task-item:nth-child(3) { border-right: 5px solid rgb(85, 44, 219); }
 
-.task4 {
-margin-top: 7px;
-height: 80px;
-width: 408px;
-font-family: Arial, sans-serif;
-font-size: 25px;
-border-radius: 10px;
-padding-left: 10px;
-border: none;
-margin-left: 10px;
-border-right: 5px solid rgb(85, 44, 219);
-}
+
 
 .task-list {
 background-color: rgb(245, 245, 245);

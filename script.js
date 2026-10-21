@@ -49,6 +49,7 @@ async function loadTasks() {
     try {
         const tasks = await getTasks();
         renderTasks(tasks);
+        setupSearch();
     } catch (error) {
         console.error('Failed to load tasks:', error);
     }
@@ -157,6 +158,25 @@ function setupTaskListeners() {
                 }
             }
         });
+    });
+}
+
+
+function setupSearch() {
+    const searchInput = document.getElementById('search-input');
+    if (!searchInput) return;
+    
+    searchInput.addEventListener('input', async (e) => {
+        const query = e.target.value.toLowerCase();
+        try {
+            const allTasks = await getTasks();
+            const filtered = allTasks.filter(task => 
+                task.title.toLowerCase().includes(query)
+            );
+            renderTasks(filtered);
+        } catch (error) {
+            console.error('Search failed:', error);
+        }
     });
 }
 
