@@ -124,25 +124,64 @@ padding-left: 10px;
 
 
 .tasks {
-display: flex;
-flex-direction: column;
-width: 425px;
+    display: flex;
+    flex-direction: column;
+    width: 445px;
+    margin-left: 10px;
+    gap: 7px;
+}
 
+.new-task-input {
+    height: 60px;
+    padding: 0 15px;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    box-sizing: border-box;
+    outline: none;
 }
 
 .task-item {
     display: flex;
     align-items: center;
-    padding: 10px;
-    margin-top: 5px;
+    min-height: 60px;
+    padding: 0 15px;
     background-color: white;
-    border-radius: 5px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
 }
 
+.task-item:nth-of-type(3n+1) { border-right: 5px solid rgb(88, 215, 226); }
+.task-item:nth-of-type(3n+2) { border-right: 5px solid orange; }
+.task-item:nth-of-type(3n+3) { border-right: 5px solid rgb(85, 44, 219); }
 
-.task-item:nth-child(1) { border-right: 5px solid rgb(88, 215, 226); }
-.task-item:nth-child(2) { border-right: 5px solid orange; }
-.task-item:nth-child(3) { border-right: 5px solid rgb(85, 44, 219); }
+.task-checkbox {
+    width: 18px;
+    height: 18px;
+    margin-right: 12px;
+    accent-color: rgb(85, 44, 219);
+    cursor: pointer;
+}
+
+.task-title {
+    flex-grow: 1;
+    font-size: 20px;
+}
+
+.task-title.done {
+    text-decoration: line-through;
+    color: grey;
+}
+
+.task-delete {
+    background: none;
+    border: none;
+    font-size: 20px;
+    padding: 5px;
+    cursor: pointer;
+}
 
 
 
@@ -168,43 +207,11 @@ box-shadow: 0 6px 4px rgba(0, 0, 0, 0.25);
 }
 
 .add-new-task-button:hover {
-opacity: 1.5;
+opacity: 0.85;
 }
 
 .add-new-task-button:active {
-opacity: 1.5;
-}
-
-.task3-box {
-display: flex;
-align-items: center;
-height: 80px;
-width: 425px;
-margin-left: 10px;
-margin-top: 7px;
-padding-left: 10px;
-box-sizing: border-box;
-
-background-color: white;
-border: 1px;
-border-radius: 10px;
-border-right: 5px solid rgb(85, 44, 219);
-}
-
-.circle {
-width: 20px;
-height: 20px;
-border: 1px solid rgb(85, 44, 219);
-border-radius: 50%;
-background-color: rgb(85, 44, 219);
-
-display: flex;
-align-items: center;
-justify-content: center;
-
-color: white;
-font-size: 14px;
-margin-right: 10px;
+opacity: 0.7;
 }
 
 
